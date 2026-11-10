@@ -7,7 +7,11 @@
 /* 1. AOS
    Inicia AOS con AOS.init().
    Después prueba a pasarle opciones: duration, offset y once. */
+   AOS.init({
+      duration: 2000
+   })
 
+   //Ejercicio-> Añadir animaciones de AOS a los cards (.tarjeta) con delay que vaya de izq a derecha
 
 
 /* 2. TYPED.JS
