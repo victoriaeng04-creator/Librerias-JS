@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirador Estelar · AOS y Typed.js</title>
+    <!-- 1. Enlaza aquí el CSS de AOS, antes de styles.css:
+         https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============ CABECERA ============ -->
+    <header class="cabecera">
+        <a href="#inicio" class="logo">mirador<span>.</span>estelar</a>
+        <nav class="menu">
+            <a href="#actividades">Actividades</a>
+            <a href="#agenda">Agenda</a>
+            <a href="#reservar">Reservar</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ============ HERO CON TYPED.JS ============ -->
+        <section class="hero" id="inicio">
+            <p class="hero__kicker">Planetario y observatorio</p>
+            <h1>Esta noche puedes ver<br><span id="typed" class="hero__typed"></span></h1>
+            <p class="hero__texto">Sesiones de planetario, telescopios en la terraza y talleres para todas las edades.</p>
+            <a href="#reservar" class="boton">Reservar visita</a>
+        </section>
+
+        <!-- ============ ACTIVIDADES ============ -->
+        <!-- AOS: anima el título y las tres tarjetas.
+             Escalona las tarjetas con data-aos-delay (0, 150, 300) -->
+        <section class="seccion" id="actividades">
+            <h2>Qué puedes hacer</h2>
+
+            <div class="tarjetas">
+                <article class="tarjeta">
+                    <span class="tarjeta__numero">01</span>
+                    <h3>Planetario</h3>
+                    <p>Una cúpula de 12 metros para viajar por el sistema solar sin moverte de la butaca.</p>
+                </article>
+                <article class="tarjeta">
+                    <span class="tarjeta__numero">02</span>
+                    <h3>Telescopios</h3>
+                    <p>Observación guiada en la terraza: planetas, cráteres de la Luna y cúmulos de estrellas.</p>
+                </article>
+                <article class="tarjeta">
+                    <span class="tarjeta__numero">03</span>
+                    <h3>Talleres</h3>
+                    <p>Aprende a orientarte por las estrellas y a fotografiar el cielo con el móvil.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ BANDA CON PARALLAX (RETO) ============ -->
+        <section class="banda">
+            <img class="parallax" src="https://picsum.photos/seed/dwa-mirador/1600/900" alt="Paisaje nocturno">
+            <p class="banda__texto">Lejos de la ciudad, el cielo cambia por completo.</p>
+        </section>
+
+        <!-- ============ AGENDA ============ -->
+        <!-- AOS: anima el título y haz que las fechas entren
+             alternando desde la izquierda y la derecha -->
+        <section class="seccion" id="agenda">
+            <h2>Agenda del mes</h2>
+
+            <ul class="agenda">
+                <li class="agenda__item">
+                    <span class="agenda__fecha">Vie 6</span>
+                    <div>
+                        <h3>Noche de Saturno</h3>
+                        <p>Observación con telescopio en la terraza.</p>
+                    </div>
+                </li>
+                <li class="agenda__item">
+                    <span class="agenda__fecha">Mar 10</span>
+                    <div>
+                        <h3>Taller: tu primer mapa del cielo</h3>
+                        <p>Para mayores de 12 años. Plazas limitadas.</p>
+                    </div>
+                </li>
+                <li class="agenda__item">
+                    <span class="agenda__fecha">Sáb 14</span>
+                    <div>
+                        <h3>Lluvia de estrellas en directo</h3>
+                        <p>Hamacas, mantas y chocolate caliente hasta la medianoche.</p>
+                    </div>
+                </li>
+                <li class="agenda__item">
+                    <span class="agenda__fecha">Jue 19</span>
+                    <div>
+                        <h3>Planetario para peques</h3>
+                        <p>Sesión de 30 minutos pensada para niñas y niños de 4 a 8 años.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ============ RESERVA ============ -->
+        <!-- AOS: haz que esta caja aparezca con un zoom -->
+        <section class="reserva" id="reservar">
+            <h2>¿Subes a mirar?</h2>
+            <p>Grupos reducidos de 20 personas. Abrimos de jueves a domingo desde las 20:00.</p>
+            <a href="#" class="boton">Reservar entrada</a>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p>Ejercicio de clase · Diseño Web Avanzado · Tema 5</p>
+    </footer>
+
+    <!-- 2. Enlaza aquí los scripts, en este orden:
+         AOS:      https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js
+         Typed.js: https://cdn.jsdelivr.net/npm/typed.js@3.0.0/dist/typed.umd.js
+         Reto, SimpleParallax:
+         https://cdn.jsdelivr.net/npm/simple-parallax-js@7.0.0/dist/vanilla/simpleParallaxVanilla.umd.js
+         Y por último, vuestro js/script.js -->
+
+</body>
+</html>

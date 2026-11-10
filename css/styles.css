@@ -1,0 +1,305 @@
+/* =========================================================
+   MIRADOR ESTELAR · AOS Y TYPED.JS · Diseño Web Avanzado
+   Mobile first: primero móvil, después tablet y escritorio.
+   ========================================================= */
+
+/* ---------- Variables ---------- */
+:root {
+    --color-fondo: #F3F6F5;
+    --color-superficie: #FFFFFF;
+    --color-texto: #12181B;
+    --color-suave: #5B6B67;
+    --color-acento: #16BFAE;
+    --color-acento-claro: #4FD8C4;
+    --color-borde: #DCE3E1;
+    --color-noche: #0B1114;
+
+    --fuente-ui: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --fuente-codigo: "Courier New", monospace;
+
+    --espacio: 1.5rem;
+    --radio: 14px;
+    --ancho-max: 1100px;
+}
+
+/* ---------- Reset básico ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* overflow-x: hidden evita la barra de scroll horizontal que
+   provocan las animaciones fade-left y fade-right de AOS */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-ui);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem var(--espacio);
+    background-color: rgba(11, 17, 20, 0.85);
+    color: #FFFFFF;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--color-acento);
+}
+
+.menu {
+    display: none;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 6rem var(--espacio) 4rem;
+    background: radial-gradient(circle at 80% 20%, #1D3A40 0%, var(--color-noche) 60%);
+    color: #FFFFFF;
+}
+
+.hero__kicker {
+    font-family: var(--fuente-codigo);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-acento-claro);
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    line-height: 1.1;
+}
+
+/* Texto que escribe Typed.js */
+.hero__typed {
+    color: var(--color-acento-claro);
+}
+
+/* Cursor que añade Typed.js */
+.typed-cursor {
+    color: var(--color-acento-claro);
+}
+
+.hero__texto {
+    max-width: 34rem;
+    color: #BFD8D5;
+    font-size: 1.1rem;
+}
+
+.boton {
+    align-self: flex-start;
+    padding: 0.9rem 1.6rem;
+    border-radius: 999px;
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+/* ---------- Secciones ---------- */
+.seccion {
+    width: 100%;
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 5rem var(--espacio);
+}
+
+.seccion h2 {
+    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+/* ---------- Tarjetas ---------- */
+.tarjetas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espacio);
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 2rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+.tarjeta__numero {
+    font-family: var(--fuente-codigo);
+    font-weight: 700;
+    color: var(--color-acento);
+}
+
+.tarjeta p {
+    color: var(--color-suave);
+}
+
+/* ---------- Banda con parallax ---------- */
+.banda {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    background-color: var(--color-noche);
+}
+
+.banda img {
+    display: block;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    filter: brightness(0.55);
+}
+
+.banda__texto {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--espacio);
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 800;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* ---------- Agenda ---------- */
+.agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+}
+
+.agenda__item {
+    display: flex;
+    align-items: center;
+    gap: var(--espacio);
+    padding: 1.2rem 1.5rem;
+    background-color: var(--color-superficie);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+}
+
+.agenda__fecha {
+    flex-shrink: 0;
+    width: 5.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: var(--color-texto);
+    color: var(--color-acento-claro);
+    font-family: var(--fuente-codigo);
+    font-weight: 700;
+    text-align: center;
+}
+
+.agenda__item p {
+    color: var(--color-suave);
+}
+
+/* ---------- Reserva ---------- */
+.reserva {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 760px;
+    margin: 0 var(--espacio) 5rem;
+    padding: 3rem var(--espacio);
+    border-radius: var(--radio);
+    background-color: var(--color-texto);
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.reserva p {
+    color: #BFD8D5;
+}
+
+.reserva .boton {
+    align-self: center;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+    padding: var(--espacio);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-suave);
+}
+
+/* ---------- Tablet ---------- */
+@media (min-width: 768px) {
+    .menu {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .menu a {
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .menu a:hover {
+        color: var(--color-acento);
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- Escritorio ---------- */
+@media (min-width: 1024px) {
+    .hero {
+        padding-left: 8vw;
+        padding-right: 8vw;
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .reserva {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
